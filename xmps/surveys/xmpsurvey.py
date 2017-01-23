@@ -287,7 +287,7 @@ class XMPSurvey(object):
         -------
         tbl : astropy.Table
         """
-        attrib = ['sys', 'zem', 'flux', 'sig_flux'] #'flag_EW', 'EW', 'sig_EW', 'flag_N', 'logN', 'sig_logN']
+        attrib = ['sys', 'zem', 'flag_flux', 'flux', 'sig_flux']
         nattrib = len(attrib)
         clms = []
         for ii in range(nattrib):
