@@ -6,12 +6,16 @@ r=Table.read('r.dat.txt', format='ascii')#, delimiter=' ', guess=False)
 i=Table.read('i.dat.txt', format='ascii')#, delimiter=' ', guess=False) 
 z=Table.read('z.dat.txt', format='ascii')#, delimiter=' ', guess=False) 
 
+#J1415+5228
+#spec-7027-56448-0036
+
 # Almeida
 #spec-0596-52370-0581
 #spec-0964-52646-0351
-#random spec
+
+#random spec (Non XMP)
 #spec-0596-52370-0589
-hdu=fits.open('i_zw_18.fits') #spec-7027-56448-0036
+hdu=fits.open('i_zw_18.fits') 
 header=hdu[1].header
 data=hdu[1].data
 plt.plot(10**data['loglam'],data['flux'])
