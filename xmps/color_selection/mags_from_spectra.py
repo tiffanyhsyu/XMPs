@@ -1,26 +1,21 @@
 
 from astropy.table import Table
+
+#Filter curves for SDSS
 u=Table.read('u.dat.txt', format='ascii')#, delimiter=' ', guess=False) 
 g=Table.read('g.dat.txt', format='ascii')#, delimiter=' ', guess=False) 
 r=Table.read('r.dat.txt', format='ascii')#, delimiter=' ', guess=False) 
 i=Table.read('i.dat.txt', format='ascii')#, delimiter=' ', guess=False) 
 z=Table.read('z.dat.txt', format='ascii')#, delimiter=' ', guess=False) 
 
-#J1415+5228
-#spec-7027-56448-0036
 
-# Almeida
-#spec-0596-52370-0581
-#spec-0964-52646-0351
-
-#random spec (Non XMP)
-#spec-0596-52370-0589
-hdu=fits.open('i_zw_18.fits') 
+hdu=fits.open(file) 
 header=hdu[1].header
 data=hdu[1].data
-plt.plot(10**data['loglam'],data['flux'])
-plt.show()
+# plt.plot(10**data['loglam'],data['flux'])
+# plt.show()
 max_flux_ind=np.where(data['flux']== np.max(data['flux']))
+#Identify Maximum flux position
 a_rs=(10**data['loglam'][max_flux_ind[0][0]]/6563)-1  ##calculates actual redshift by assuming H alpha as strongest line
 print a_rs
 #print a_rs
