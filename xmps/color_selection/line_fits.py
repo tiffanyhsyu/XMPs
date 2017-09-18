@@ -4,11 +4,13 @@ matplotlib.use('Qt4Agg')
 import numpy as np
 import matplotlib.pyplot as plt
 
-import pylab as plb
 from scipy.optimize import curve_fit
 from scipy import asarray as ar,exp
 import numpy.ma as ma
 
+'''
+This code is for fitting emission lines (gaussian) and measuring their equivalent widths
+'''
 
 Hb=4862.721
 oiii_4959=4960.295
