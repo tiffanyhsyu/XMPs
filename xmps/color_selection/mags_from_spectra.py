@@ -14,6 +14,8 @@ import speclite
 import numpy as np
 import numpy.ma as ma
 from astropy.io import fits
+import glob
+
 
 files=glob.glob('*.fits')
 
