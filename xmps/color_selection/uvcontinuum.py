@@ -1,5 +1,10 @@
 from astropy.io import fits
 
+
+###simple addition of UV component to spectrum. Modeled as a f propto lambda**-2.3. This value is acceptable within 0.3 of 2.0 
+#for star forming galaxies. You should compare spectroscopic magnitude to photometric magnitude to get a sense of what value to use.
+
+
 hdu=fits.open(file)
 data=hdu[1].data
 wave=10**data['loglam']
